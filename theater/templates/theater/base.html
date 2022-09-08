@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean View</title>
+    <link rel="stylesheet" href="{% static 'theater/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'theater/css/navbar.css' %}">
+    {% block head %}{% endblock %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"  >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet"> 
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div id="open-nav" class="responsive-nav">
+            <div class="responsive-logo">
+                
+                <a href="#" class="responsive-nav-logo">
+                    <img src="{% static 'theater/images/popcorn-svgrepo-com.svg' %}" width="48" height="48" alt="">
+                    Ocean View
+                </a>
+            </div>
+            <div class="empty-responsive-space"></div>
+            <div id="open-menu" class="open-menu">
+                <div class="horizontal-line"></div>
+                <div class="horizontal-line"></div>
+                <div class="horizontal-line"></div>
+            </div>
+        </div>
+        <ul id="navbar-list" class="navbar-list">
+            <li class="nav-list-item nav-logo">
+                <a href="{% url 'theater:home' %}" class="nav-link nav-logo">
+                    <img src="{% static 'theater/images/popcorn-svgrepo-com.svg' %}" alt="" width="48" height="48">
+                    Ocean View
+                </a>
+            </li>
+
+            <li class="empty-space"></li>
+            <li class="nav-list-item">
+                <a href="#" class="nav-link">Precios</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="#" class="nav-link">Cartelera</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="#" class="nav-link">Estrenos</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="#" class="nav-link">Funciones</a>
+            </li>
+            <li class="empty-space"></li>
+            <li class="nav-list-item">
+                <a href="{% url 'theater:register' %}" class="nav-link">Registrarse</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="{% url 'theater:login' %}" class="nav-link">Ingresar</a>
+            </li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer">
+        <h1 class="footer-title">Ocean View</h1>
+        <p class="footer-copyright">&copy Copyright 2022. Todos los derechos reservados</p>
+    </footer>
+    
+</body>
+<script src="{% static 'theater/js/navbar.js' %}"></script>
+{% block script %}
+{% endblock %}
+</html>

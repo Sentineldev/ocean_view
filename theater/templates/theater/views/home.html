@@ -1,0 +1,71 @@
+{% extends 'theater/base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'theater/css/home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<section class="section hero">
+    <div class="fill-nav"></div>
+    <div class="black-screen"></div>
+    <div class="movie-information">
+        <div class="title-container">
+            <h1 class="movie-title">MINIONS NACE UN VILLANO</h1>
+        </div>
+        <div class="description-container">
+            <p class="movie-description">
+                En los años 70, Gru crece siendo un gran admirador de "Los salvajes seis", un supergrupo de villanos. Para demostrarles que puede ser malvado, Gru idea un plan con la esperanza de formar parte de la banda. Por suerte, cuenta con la ayuda de sus fieles seguidores, los Minions, siempre dispuestos a sembrar el caos.                </p>
+        </div>
+        <div class="link-container">
+            <a href="#" class="section-link">Ver</a>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <h1 class="section-title">Cartelera</h1>
+    <div class="poster-container">
+        
+        <div class="poster">
+            <img src="../HO00004297.jpg" alt="">
+            <div class="poster-information-dark-frame">
+                <div class="poster-information-container">
+                    <div class="poster-title-container">
+                        <h1 class="poster-title">Thor Love and Thunder</h1>
+                    </div>
+                    <div class="poster-description-container">
+                        <p class="poster-description">
+                            Thor está buscando la paz interior, pero la irrupción de Gorr, el asesino de dioses, le obliga a volver al combate. Thor recluta a la Reina Valkiria, Korg y su exnovia, Jane Foster, para que lo ayuden a evitar la extinción de los dioses.
+                        </p>
+                    </div>
+                    <div class="poster-link-container">
+                        <a href="#" class="poster-link">Ver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="poster">
+            <img src="../HO00004297.jpg" alt="">
+            <div class="poster-information-dark-frame">
+                <div class="poster-information-container">
+                    <div class="poster-title-container">
+                        <h1 class="poster-title">Thor Love and Thunder</h1>
+                    </div>
+                    <div class="poster-description-container">
+                        <p class="poster-description">
+                            Thor está buscando la paz interior, pero la irrupción de Gorr, el asesino de dioses, le obliga a volver al combate. Thor recluta a la Reina Valkiria, Korg y su exnovia, Jane Foster, para que lo ayuden a evitar la extinción de los dioses.
+                        </p>
+                    </div>
+                    <div class="poster-link-container">
+                        <a href="#" class="poster-link">Ver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+{% endblock %}

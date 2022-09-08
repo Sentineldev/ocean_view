@@ -1,0 +1,49 @@
+{% extends 'theater/base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'theater/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="fill-nav"></div>
+    <form  action="{% url 'theater:login' %}" method="post" class="login-form">
+        {% csrf_token %}
+        <div class="title-container">
+            <h1 class="form-title">Iniciar Sesion</h1>
+        </div>
+        <div class="input-container">
+            <label class="form-label" for="username">Usuario</label>
+            <input type="text" id="username" name="username" class="form-input" placeholder="Usuario">
+        </div>
+        <div class="input-container">
+            <label class="form-label" for="password">Contraseña</label>
+            <input type="password" id="password" name="password" class="form-input" placeholder="Contraseña">
+        </div>
+        <div class="button-container">
+            <button class="form-button">Ingresar</button>
+        </div>
+        <div class="links-container">
+            <a href="#" class="form-links">Olvidaste tu contraseña?</a>
+            <a href="#" class="form-links">No te has registrado?, registrate aqui</a>
+        </div>
+        {% if message %}
+            {% if state  %}
+                <div class="message-container sucess-message">
+                    <p class="message">{{message}}</p>
+                </div>
+            {% else %}
+                <div class="message-container alert-message">
+                    <p class="message">{{message}}</p>
+                </div>
+            {% endif %}
+        {% endif %}
+        
+        
+
+        
+    </form>
+</section>
+{% endblock %}

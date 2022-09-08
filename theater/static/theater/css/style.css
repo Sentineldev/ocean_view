@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+body{
+    background-color: #DFF6FF;
+}
+
+.section{
+
+    min-height: 100vh;
+    width: 100%;
+}
+
+.section-title{
+    font-size: clamp(3.2rem,2.4vw,4.8rem);
+    color:#051367;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+.footer{
+    text-align: center;
+    background-color: #5D8BF4;
+}
+.footer-title{
+    color: #DFF6FF;
+    padding: 1rem 2rem 2rem 2rem;
+    font-size: clamp(2rem,2.4vw,2.8rem);
+}
+.footer-copyright{
+    color: #DFF6FF;
+    font-size: 1.6rem;
+}
+
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label{
+    font-size: clamp(1.8em,2.4vw,2rem);
+    font-family: 'Lato', sans-serif;
+    color: #25316D;
+    padding: 0.5rem 0;
+}
+.form-input,.form-select{
+    padding: 1.4rem 1rem;
+    font-size: clamp(1.6rem,2.4vw,1.8rem);
+    color: #25316D;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    box-shadow: 0px 0px 2px #5F6F94,0px 0px 2px #5F6F94;
+}
+
+.form-button{
+    display: inline-block;
+    font-size: clamp(1.4rem,2.4vw,1.8rem);
+    margin: 2rem 0;
+    text-decoration: none;
+    background-color: #5D8BF4;
+    box-shadow: 0px 0px 2px #5D8BF4,0px 0px 2px #5D8BF4;
+    color: #DFF6FF;
+    padding: 1.2rem 4rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.form-button:hover{
+    opacity: 0.9;
+}
+
+.form-title{
+    font-size: clamp(2.4rem,2.4vw,3.2rem);
+    color: #051367;
+    font-family: 'Lato', sans-serif;
+}
+.form-subtitle{
+    font-size: clamp(2rem,2.4vw,2.4rem);
+    color: #051367;
+    font-family: 'Lato', sans-serif;
+}
+
+.message-container{
+    background-color: transparent;
+    border-radius: 0.4rem;
+    padding: 1.4rem 1rem;
+}
+.message{
+    color: #DFF6FF;
+    font-size: clamp(1.6rem,2.4vw,1.6rem);
+}
+.alert-message{
+    background-color: #cf4b4b;
+    box-shadow: 0px 0px 2px #cf4b4b ;
+}
+.sucess-message{
+    background-color: rgb(46, 170, 46) ;
+    box-shadow: 0px 0px 2px rgb(46, 170, 46);
+}
+
+
+.links-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.form-links{
+    font-size: clamp(1.4rem,2.4vw,1.6rem);
+    text-decoration: none;
+    color: #5F6F94;
+}

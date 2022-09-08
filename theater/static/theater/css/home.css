@@ -1,0 +1,169 @@
+
+
+
+.black-screen{
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+}
+.hero{
+    background-image: url(../HO00004085.jpg);
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-information{
+    width: 66%;
+    height: 66%;
+    z-index: 2;
+    position: relative;
+}
+
+
+.description-container{
+    max-height: 80%;
+    overflow-y: auto;
+}
+.movie-title,.movie-description{
+    color: white;
+}
+.movie-title{
+    font-size: 6.4rem;
+    font-size: clamp(4.8rem,2.4vw,6.4rem);
+    letter-spacing: 1px;
+    font-family: 'Bebas Neue';
+    text-shadow: 0px 0px 1px black;
+}
+.movie-description{
+    font-size: 2.4rem;  
+    font-size: clamp(2rem,2.4vw,2.4rem);
+    text-shadow: 0px 0px 1px black;
+    text-overflow: ellipsis;
+}
+
+.section-link{
+    display: inline-block;
+    font-size: 3.2rem;
+    font-size: clamp(2.4rem,2.4vw,3.2rem);
+    margin: 2rem 0;
+    text-decoration: none;
+    background-color: #5D8BF4;
+    box-shadow: 0px 0px 2px #5D8BF4,0px 0px 2px #5D8BF4;
+    color: #DFF6FF;
+    padding: 0.5rem 4rem;
+    border-radius: 0.5rem;
+}
+.section-link:hover{
+    opacity: 0.9;
+}
+.poster-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    column-gap: 30px;
+    row-gap: 30px;
+    margin: 0.5rem 0;
+    justify-content: center;
+    
+}
+.poster{
+    position: relative;
+    
+
+}
+
+.poster:hover > .poster-information-dark-frame{
+    display: inherit;
+    animation: Fadein 0.3s;
+
+}
+
+
+.poster img{
+    width: 350px;
+    height: 500px;
+}
+
+
+.poster-information-dark-frame{
+    transition: 0.2s;
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: none;
+}
+
+
+.poster-information-container{
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: 100%;
+
+}
+
+.poster-title{
+    font-size: clamp(2rem,2.4vw,2.4rem);
+    margin-bottom: 1.4rem;
+}
+
+.poster-description-container{
+    flex: 1;
+}
+.poster-description{
+    font-size: clamp(1.4rem,2.4vw,1.8rem);
+}
+
+
+.poster-link{
+    display: inline-block;
+    font-size: clamp(2rem,2.4vw,2.4rem);
+    margin: 2rem 0;
+    text-decoration: none;
+    background-color: #5D8BF4;
+    box-shadow: 0px 0px 2px #5D8BF4,0px 0px 2px #5D8BF4;
+    color: #DFF6FF;
+    padding: 1rem 4rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    text-align: center;
+}
+@media (max-width:900px){
+    .hero{
+        background-size:100% 100%;
+    }
+    .movie-information{
+        width: 90%;
+        height: 70%;
+    }
+}
+
+@keyframes Fadein{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes Fadeout{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}

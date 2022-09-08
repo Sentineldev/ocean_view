@@ -1,0 +1,19 @@
+.register-form{
+    margin: 0.8rem;
+    box-shadow: 0px 0px 2px #5F6F94,0px 0px 2px #5F6F94;
+    padding: 2rem;
+     
+}
+.form-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,910px));
+    row-gap: 15px;
+    column-gap: 15px;
+}
+.form-section{
+    margin-bottom: 3rem;
+}
+.form-title{
+    margin-bottom: 3rem;
+}
+

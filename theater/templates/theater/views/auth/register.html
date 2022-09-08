@@ -1,0 +1,109 @@
+{% extends 'theater/base.html' %}
+
+
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'theater/css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="section">
+    <div class="fill-nav"></div>
+    <form action="{% url 'theater:register' %}" method="post" class="register-form">
+        {% csrf_token %}
+        <div class="title-container">
+            <h1  class="form-title">Registro de Usuario</h1>
+        </div>
+        <div class="form-section">
+            <div class="title-container">
+                <h1  class="form-subtitle">Cuenta</h1>
+            </div>
+            <div class="form-grid">
+                <div class="input-container">
+                    <label for="username" class="form-label">Usuario</label>
+                    <input type="text" class="form-input" name="username" id="username" placeholder="Usuario" required>
+                </div>
+                <div class="input-container">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-input" name="password" id="password" placeholder="Contraseña" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-section">
+            <div class="title-container">
+                <h1  class="form-subtitle">Datos Personales</h1>
+            </div>
+            <div class="form-grid">
+                <div class="input-container">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-input" name="name" id="name" placeholder="Nombre" required>
+                </div>
+                <div class="input-container">
+                    <label for="last_name" class="form-label">Apellido</label>
+                    <input type="text" class="form-input" name="last_name" id="last_name" placeholder="Apellido" required>
+                </div>
+                <div class="input-container">
+                    <label for="legal_document" class="form-label">Cedula</label>
+                    <input type="number" class="form-input" name="legal_document" id="legal_document" placeholder="Cedula" required>
+                </div>
+                <div class="input-container">
+                    <label for="gender" class="form-label">Genero</label>
+                    <select name="gender" id="gender" class="form-select">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <label for="email" class="form-label">Correo</label>
+                    <input type="email" class="form-input" name="email" id="email" placeholder="Correo" required>
+                </div>
+                
+                <div class="input-container">
+                    <label for="phone" class="form-label">Telefono</label>
+                    <input type="number" class="form-input" name="phone" id="phone" placeholder="Telefono" required>
+                </div>
+        
+                <div class="input-container">
+                    <label for="state" class="form-label">Estado</label>
+                    <input type="text" class="form-input" name="state" id="state" placeholder="Estado" required>
+                </div>
+        
+                <div class="input-container">
+                    <label for="country" class="form-label">Pais</label>
+                    <input type="text" class="form-input" name="country" id="country" placeholder="Pais" required>
+                </div>
+                <div  class="input-container">
+                    <label for="birth_date" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" class="form-input" name="birth_date" id="birth_date" placeholder="Fecha de Nacimiento" required>
+                </div>
+                <div id="grid-child" class="input-container">
+                    <label for="address" class="form-label">Direccion</label>
+                    <input type="text" class="form-input" name="address" id="address" placeholder="Direccion" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="form-button">Registrarse</button>
+        </div>
+
+        {% if message %}
+            {% if state  %}
+                <div class="message-container sucess-message">
+                    <p class="message">{{message}}</p>
+                </div>
+            {% else %}
+                <div class="message-container alert-message">
+                    <p class="message">{{message}}</p>
+                </div>
+            {% endif %}
+        {% endif %}
+        
+        
+    </form>
+</section>
+
+{% endblock %}
