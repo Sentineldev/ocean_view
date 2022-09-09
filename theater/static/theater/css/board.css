@@ -1,0 +1,10 @@
+.poster-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    padding: 3rem;
+    row-gap: 30px;
+    column-gap: 30px;
+    justify-content: center;
+    width: 100%;
+}
+

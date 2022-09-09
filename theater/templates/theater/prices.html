@@ -1,0 +1,38 @@
+{% extends 'theater/base.html' %}
+{% load static %}
+
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'theater/css/prices.css' %}">
+{% endblock %}
+{% block content %}
+    <section class="section">
+        
+        <div class="section-banner">
+            <img src="{% static 'theater/images/pexels-pixabay-33129.jpg' %}" alt="" class="banner">
+            <div class="banner-dark-frame"></div>
+            <div class="banner-title-container">
+                <h1 class="banner-title">Precios</h1>
+            </div>
+        </div>
+        <table class="price-table">
+            <thead class="price-table-head">
+                <tr class="table-row">
+                    <th class="table-header">Tipo de Entrada</th>
+                    <th class="table-header">Formato</th>
+                    <th class="table-header">Precio</th>
+                </tr>
+            </thead>
+            <tbody class="price-table-body">
+                {% for ticket in data %}
+                    <tr class="table-row">
+                        <td class="table-data">{{ticket.type}}</td>
+                        <td class="table-data">{{ticket.format}}</td>
+                        <td class="table-data">{{ticket.price}} $</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

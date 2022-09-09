@@ -58,16 +58,16 @@
 
             <li class="empty-space"></li>
             <li class="nav-list-item">
-                <a href="#" class="nav-link">Precios</a>
+                <a href="{% url 'theater:prices' %}" class="nav-link">Precios</a>
             </li>
             <li class="nav-list-item">
-                <a href="#" class="nav-link">Cartelera</a>
+                <a href="{% url 'theater:board' %}" class="nav-link">Cartelera</a>
             </li>
             <li class="nav-list-item">
-                <a href="#" class="nav-link">Estrenos</a>
+                <a href="{% url 'theater:premiere' %}" class="nav-link">Estrenos</a>
             </li>
             <li class="nav-list-item">
-                <a href="#" class="nav-link">Funciones</a>
+                <a href="{% url 'theater:functions' %}" class="nav-link">Funciones</a>
             </li>
             <li class="empty-space"></li>
             <li class="nav-list-item">
@@ -78,6 +78,7 @@
             </li>
         </ul>
     </nav>
+    <div class="fill-nav"></div>
     {% block content %}
     {% endblock %}
 

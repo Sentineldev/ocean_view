@@ -24,7 +24,46 @@ body{
     color:#051367;
     text-align: center;
     padding: 2rem 1rem;
+    text-transform: capitalize;
 }
+
+.section-banner{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.section-banner img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+.banner-dark-frame{
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.banner-title-container{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    align-items: flex-end;
+    z-index: 5;
+}
+.banner-title{
+    font-size: clamp(4.2rem,2.4vw,4.8rem);
+    text-shadow:0px 0px 2px #DFF6FF, 0px 0px 2px black;
+    color: #DFF6FF;
+    font-family: 'Bebas Neue';
+    letter-spacing: 1px;
+}
+
 .footer{
     text-align: center;
     background-color: #5D8BF4;
@@ -36,7 +75,7 @@ body{
 }
 .footer-copyright{
     color: #DFF6FF;
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem,2.4vw,2rem);
 }
 
 
@@ -59,6 +98,7 @@ body{
     border: none;
     background-color: transparent;
     box-shadow: 0px 0px 2px #5F6F94,0px 0px 2px #5F6F94;
+    width: 100%;
 }
 
 .form-button{

@@ -8,12 +8,15 @@
 
 {% block content %}
 <section class="section">
-    <div class="fill-nav"></div>
+    <div class="section-banner">
+        <img src="{% static 'theater/images/pexels-pixabay-33129.jpg' %}" alt="" class="banner">
+        <div class="banner-dark-frame"></div>
+        <div class="banner-title-container">
+            <h1 class="banner-title">Iniciar Sesion</h1>
+        </div>
+    </div>
     <form  action="{% url 'theater:login' %}" method="post" class="login-form">
         {% csrf_token %}
-        <div class="title-container">
-            <h1 class="form-title">Iniciar Sesion</h1>
-        </div>
         <div class="input-container">
             <label class="form-label" for="username">Usuario</label>
             <input type="text" id="username" name="username" class="form-input" placeholder="Usuario">

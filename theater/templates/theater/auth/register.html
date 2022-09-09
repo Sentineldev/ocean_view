@@ -11,12 +11,15 @@
 {% block content %}
 
 <section class="section">
-    <div class="fill-nav"></div>
+    <div class="section-banner">
+        <img src="{% static 'theater/images/pexels-pixabay-33129.jpg' %}" alt="" class="banner">
+        <div class="banner-dark-frame"></div>
+        <div class="banner-title-container">
+            <h1 class="banner-title">Registro</h1>
+        </div>
+    </div>
     <form action="{% url 'theater:register' %}" method="post" class="register-form">
         {% csrf_token %}
-        <div class="title-container">
-            <h1  class="form-title">Registro de Usuario</h1>
-        </div>
         <div class="form-section">
             <div class="title-container">
                 <h1  class="form-subtitle">Cuenta</h1>

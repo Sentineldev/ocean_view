@@ -1,0 +1,66 @@
+{% extends 'theater/base.html' %}
+
+{% load static %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'theater/css/functions.css' %}">
+<link rel="stylesheet" href="{% static 'theater/css/poster.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="section">
+        <div class="section-banner">
+            <img src="{% static 'theater/images/pexels-pixabay-33129.jpg' %}" alt="" class="banner">
+            <div class="banner-dark-frame"></div>
+            <div class="banner-title-container">
+                <h1 class="banner-title">Funciones</h1>
+            </div>
+        </div>
+        <div class="movie-flex">
+
+            {% for key,value in data.items %}
+                <div class="movie-container">
+                    <!--Title-->
+                    <h1 class="movie-title">{{value.movie.title}} ({{value.movie.language}})</h1>
+                    <!--Container where the movie information is going to-->
+                    <div class="middle-content">
+                        <!--Poster with info about the movie-->
+                        <div class="poster">
+                            <img src="{{value.movie.banner_url}}" alt="" class="poster-img">
+                            <div class="poster-frame">
+                                <h1 class="poster-frame-title">{{value.movie.title}}</h1>
+                                <p class="poster-frame-description">{{value.movie.description}}</p>
+                                <a href="#" class="poster-frame-link">Ver</a>
+                            </div>
+                        </div>
+                        <!--Functions availables-->
+                        <div class="movie-functions">
+                            <table class="table-functions">
+                                <thead class="table-functions-head">
+                                    <tr class="table-row">
+                                        <th class="table-header">Hora</th>
+                                        <th class="table-header">Sala</th>
+                                        <th class="table-header">Censura</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-functions-body">
+                                    {% for function in value.functions %}
+                                        <tr class="table-row">
+                                            <td class="table-data">{{function.time}}</td>
+                                            <td class="table-data">{{function.room}}</td>
+                                            <td class="table-data">{{value.movie.rating}}</td>
+                                            <td class="table-data">
+                                                <a href="#" class="table-link">Ver</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

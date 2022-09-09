@@ -1,0 +1,51 @@
+{% extends 'theater/base.html' %}
+
+
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'theater/css/poster.css' %}">
+<link rel="stylesheet" href="{% static 'theater/css/premiere.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <section class="section">
+        <div class="section-banner">
+            <img src="{% static 'theater/images/pexels-pixabay-33129.jpg' %}" alt="" class="banner">
+            <div class="banner-dark-frame"></div>
+            <div class="banner-title-container">
+                <h1 class="banner-title">Estrenos</h1>
+            </div>
+        </div>
+        {% for key,value in data.items %}
+
+            <div class="container">
+                <div class="title-container">
+                    <h1 class="section-title">{{key}}</h1>
+                </div>
+                <div class="poster-grid">
+                    <!--Posters-->
+                    {% for value in value.premieres %}
+                        <div class="poster-container">
+                            <h1 class="poster-title">
+                                <span class="poster-title-span-1">{{key}}</span>
+                                <br>
+                                <span class="poster-title-span-2">{{value.premiere.optional_date}}</span>
+                            </h1>
+                            <div class="poster">
+                                <img src="{{value.movie.banner_url}}" alt="" class="poster-img">
+                                <div class="poster-frame">
+                                    <h1 class="poster-frame-title">{{value.movie.title}}</h1>
+                                    <p class="poster-frame-description">{{value.movie.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <!--Endposter-->
+                </div>
+            </div>
+
+        {% endfor %}
+        
+    </section>
+{% endblock %}

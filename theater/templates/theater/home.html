@@ -1,0 +1,46 @@
+{% extends 'theater/base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'theater/css/home.css' %}">
+<link rel="stylesheet" href="{% static 'theater/css/poster.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+<section class="section hero">
+    
+    <div class="section-img">
+        <img src="{% static 'theater/images/HO00004085.jpg' %}" alt="">
+    </div>
+    <div class="black-screen"></div>
+    <div class="movie-information">
+        <div class="title-container">
+            <h1 class="movie-title">MINIONS NACE UN VILLANO</h1>
+        </div>
+        <div class="description-container">
+            <p class="movie-description">
+                En los años 70, Gru crece siendo un gran admirador de "Los salvajes seis", un supergrupo de villanos. Para demostrarles que puede ser malvado, Gru idea un plan con la esperanza de formar parte de la banda. Por suerte, cuenta con la ayuda de sus fieles seguidores, los Minions, siempre dispuestos a sembrar el caos.
+            </p>
+        </div>
+        <div class="link-container">
+            <a href="#" class="section-link">Ver</a>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <h1 class="section-title">Cartelera</h1>
+    <div class="poster-container">
+        {% for poster in data %}
+            <div class="poster">
+                <img src="{{poster.banner_url}}" alt="" class="poster-img">
+                <div class="poster-frame">
+                    <h1 class="poster-frame-title">{{poster.title}}</h1>
+                    <p class="poster-frame-description">{{poster.description}}</p>
+                    <a href="#" class="poster-frame-link">Ver</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

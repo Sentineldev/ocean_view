@@ -2,9 +2,13 @@ import http
 from unittest import loader
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import User,Person
-from django.views.generic import View
+from .models import Function, User,Person,Ticket,Board,Premiere
+from django.views.generic import View,ListView
 from django.urls import reverse
+from .utils import Utils
+from datetime import time,date
+
+from pprint import pprint
 # Create your views here.
 
 
@@ -12,18 +16,18 @@ from django.urls import reverse
 
 
 class HomeView(View):
-    template_name = "theater/views/home.html"
+    template_name = "theater/home.html"
 
     def get(self,request):
-
-        return render(request,self.template_name)
+        result  = Board.getAllBoard()
+        return render(request,self.template_name,{"data":result})
 
     
 
 
 
 class LoginView(View):
-    template_name = "theater/views/auth/login.html"
+    template_name = "theater/auth/login.html"
 
     
     def get(self,request):
@@ -43,7 +47,7 @@ class LoginView(View):
 
 
 class RegisterView(View):
-    template_name = "theater/views/auth/register.html"
+    template_name = "theater/auth/register.html"
     def get(self,request):
         return render(request,self.template_name)
 
@@ -79,3 +83,38 @@ class RegisterView(View):
             response = {"message":"La Cedula o el Usuario ya se encuentran registrados","state":False}
 
         return render(request,self.template_name,response)
+
+
+class PricesView(View):
+    template_name = "theater/prices.html"
+
+    def get(self,request):
+        tickets_price = Ticket.objects.all()
+        return render(request,self.template_name,{"data":tickets_price})
+
+
+class BoardView(View):
+    template_name = "theater/board.html"
+
+    def get(self,request):
+        result  = Board.getAllBoard()
+        return render(request,self.template_name,{"data":result})
+
+class FunctionsView(View):
+    template_name = "theater/functions.html"
+
+    def get(self,request):
+        current_date = Utils.getCurrentDate()
+        current_time = Utils.getCurrentTime()
+        result = Function.getFunctions(current_date,current_time) 
+        return render(request,self.template_name,{"data":result})
+
+
+class PremiereView(View):
+
+    template_name = "theater/premiere.html"
+
+    def get(self,request):
+        current_date = Utils.getCurrentDate()
+        result = Premiere.getPremieres(current_date)
+        return render(request,self.template_name,{"data":result}) 

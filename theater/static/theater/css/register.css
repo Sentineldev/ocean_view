@@ -1,12 +1,13 @@
 .register-form{
-    margin: 0.8rem;
+    margin:4rem auto;
     box-shadow: 0px 0px 2px #5F6F94,0px 0px 2px #5F6F94;
     padding: 2rem;
+    width: 80%;
      
 }
 .form-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,910px));
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
     row-gap: 15px;
     column-gap: 15px;
 }
@@ -17,3 +18,11 @@
     margin-bottom: 3rem;
 }
 
+
+
+@media(max-width:1000px){
+    .register-form{
+        margin: 0;
+        width: 100%;
+    }
+}
