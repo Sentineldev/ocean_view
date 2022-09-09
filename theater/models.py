@@ -105,7 +105,7 @@ class Function(models.Model):
     def getDictFunction(object):
         return {
             "function_id":object.function_id,
-            "time":object.time.strftime("%H:%M: %p"),
+            "time":object.time.strftime("%H:%M %p"),
             "date":object.date.strftime("%Y:%m:%d"),
             "seat_amount":object.seat_amount,
             "movie_id":object.movie_id,

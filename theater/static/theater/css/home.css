@@ -1,5 +1,12 @@
 
 
+
+.hero{
+    position: relative;
+    opacity: 1;
+    
+}
+
 .section-img{
     width: 100%;
     height: 100%;
@@ -16,17 +23,20 @@
     background-color: rgba(0,0,0,0.75);
     width: 100%;
     height: 100%;
+    
 }
-.hero{
-    background-image: none;
-    background-repeat:no-repeat;
-    background-size: 100% 100%;
-    position: relative;
+
+
+.box{
+    position: absolute;
+    top: 0;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    z-index: 100;
 }
+
 
 .movie-information{
     width: 66%;
@@ -82,6 +92,8 @@
     
 }
 
+
+
 @media (max-width:900px){
     .hero{
         background-size:100% 100%;
@@ -93,3 +105,19 @@
 }
 
     
+@keyframes fadein{
+    from{
+        background-color: yellow;
+    }
+    to{
+        background-color: red;
+    }
+}
+@keyframes fadeout{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0.2;
+    }
+}
